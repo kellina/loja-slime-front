@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>Loja de slimes</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lojaSlime.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+
+    <script src="produto-service.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="imagem-produtos/logo.png" alt="logo-slime">
+        </div>
+        <div class="hamburguer-menu">
+            <a class="icon" onclick="showMenu()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#home">Inicio</a></li>
+                <li><a class="nav-link" href="#products">Produtos</a></li>
+                <li><a class="nav-link" href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input id="search" type="text" placeholder="O que está procurando.." name="search" onkeypress="searchKeypressed(event)">
+            <button onclick="listProdutos()" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
+    </header>
+
+
+    <div id="home" class="sub-title">
+        <h1>Loja de Slimes</h1>
+        <p>Tudo para fazer seu slime em casa.</p>
+    </div>
+
+    <div id="products">
+    </div>
+
+    <div class="welcome-message">
+        <h2 class="welcome-message-text">Escolha, pague e receba seu pedido sem sair de sua casa.</h2>
+    </div>
+
+    <div class="container-news-contact">
+        <div id="form-newslatter">
+            <div class="newslatter-title">NEWSLETTER:</div>
+            <input type="text" id="name" name="name" required placeholder="Digite seu nome"><br>
+            <input type="text" id="email" name="email" required placeholder="Digite seu email" required><br>
+            <input id="submit" type="button" value="Enviar">
+        </div>
+
+        <div id="contact">
+            <div class="contact-title">DADOS DE CONTATO:</div>
+            <p>(85) 3333-1234 </p>
+            <p>Avenida ABC, nº 1234, Fortaleza-CE</p>
+            <p>sac@lojaslimes.com.br</p>
+        </div>
+    </div>
+
+
+    <footer>
+        Copyright 2020. Loja Slimes - Todos direitos reservados.
+    </footer>
+
+    <script src="lojaSlime.js"></script>
+</body>
+
+</html>
