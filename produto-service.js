@@ -1,5 +1,5 @@
 async function getProdutos(nome) {
-    let url = "http://192.168.0.14:3001/produtos"
+    let url = "https://loja-slime-backend.herokuapp.com/produtos"
     if (nome) {
         url += '?nome=' + nome
     }
