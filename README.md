@@ -6,7 +6,7 @@
 
 > An online store frontend mock application
 
-[![Author](https://img.shields.io/badge/author-kellina-green?style=flat-square)](https://github.com/kellina) ![Netlify](https://img.shields.io/netlify/8e029475-1ad1-4356-a999-7f67eeafad5b) ![License](https://img.shields.io/github/license/kellina/loja-slime-front)
+[![Author](https://img.shields.io/badge/author-kellina-green?style=flat-square)](https://github.com/kellina) [![Netlify Status](https://api.netlify.com/api/v1/badges/8e029475-1ad1-4356-a999-7f67eeafad5b/deploy-status)](https://app.netlify.com/sites/lojaslime/deploys)  ![Netlify](https://img.shields.io/netlify/8e029475-1ad1-4356-a999-7f67eeafad5b) ![License](https://img.shields.io/github/license/kellina/loja-slime-front)
 
 ## :pushpin: Summary
 
