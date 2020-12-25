@@ -6,6 +6,14 @@
 
 > An online store frontend mock application
 
+[![Author](https://img.shields.io/badge/author-kellina-green?style=flat-square)](https://github.com/kellina) ![Netlify](https://img.shields.io/netlify/8e029475-1ad1-4356-a999-7f67eeafad5b) ![License](https://img.shields.io/github/license/kellina/loja-slime-front)
+
+## :pushpin: Summary
+
+* [Features](#rocket-features)
+* [Demo](#link-demo)
+* [License](#closed_book-license)
+
 ## :rocket: Features
 
 * :iphone: Completely responsive application
