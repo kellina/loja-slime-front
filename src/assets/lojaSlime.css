@@ -16,7 +16,7 @@
 
 body {
     background-color: var(--candy-pink);
-    font-family: "Alegreya", sans-serif;
+    font-family: 'Alegreya', sans-serif;
 }
 
 a {
@@ -29,11 +29,11 @@ p {
     margin-block-end: 1em;
 }
 
-
 /* HEADER - MENU - PESQUISA */
 
 #header {
     position: relative;
+    overflow: hidden;
     top: 0;
     width: 100%;
     min-height: auto;
@@ -52,13 +52,109 @@ p {
 #nav-bar {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0 50px;
     height: 50px;
-    font-weight: 400;
+    font-weight: 700;
     background-color: var(--rose-dust);
+    font-size: 1.4rem;
 }
 
+nav {
+    width: 100%;
+}
+
+/* MENU HAMBURGUER */
+#menuToggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+}
+
+#menuToggle a {
+    color: #232323;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: tomato;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* #menu
+ {
+   position: absolute;
+   width: 300px;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   background: #ededed;
+   list-style-type: none;
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ } */
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+/* FIM MENU HAMBURGUER */
+/* 
 #nav-bar ul {
     width: 500px;
     display: flex;
@@ -67,7 +163,7 @@ p {
 
 #nav-bar li {
     display: flex;
-    align-items: center;
+    margin-left: 80px;
     list-style: none;
 }
 
@@ -89,30 +185,28 @@ p {
 #nav-bar li a.active {
     background-color: var(--y-in-mn-blue);
     color: var(--white);
-}
+} */
 
-.cart {
+#cart-icon {
     font-size: 30px;
+    cursor: pointer;
 }
 
 #header .hamburguer-menu {
     display: none;
     font-size: 22pt;
     cursor: pointer;
+    z-index: 2;
 }
 
-
 /* PESQUISAR NA PÁGINA  */
-
-
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_search_menu */
 
 .search {
     float: right;
     min-width: 285px;
 }
 
-.search input[type="text"] {
+.search input[type='text'] {
     padding: 6px;
     font-size: 17px;
     border: none;
@@ -134,7 +228,6 @@ p {
 .search button:hover {
     background-color: #ccc;
 }
-
 
 /* TITULO DA LOJA */
 
@@ -177,6 +270,105 @@ p {
     font-size: 20px;
 }
 
+/* CARRINHO DE COMPRAS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatop;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatop {
+    from {top: -300px; opacity: 0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatop {
+    from {top: -300px; opacity: 0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: var(--rose-dust);
+    color: white;
+  }
+  
+  .modal-body {
+      padding: 2px 16px;
+}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: var(--rose-dust);
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-footer button {
+    font-family: inherit;
+    cursor: pointer;
+    width: 50%;
+    height: 30px;
+    font-weight: bold;
+    align-self: center;
+  }
+
+table {
+    width: auto;
+    font-family: inherit;
+    max-height: min-content;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+td img {
+    width: 100%;
+}
 
 /* MEUS PRODUTOS */
 
@@ -233,7 +425,6 @@ p {
     vertical-align: middle;
 }
 
-
 /* FORMULARIO NEWSLATTER */
 
 .container-news-contact {
@@ -258,7 +449,7 @@ p {
     padding: 4px;
 }
 
-#form-newslatter input[type="text"] {
+#form-newslatter input[type='text'] {
     width: 50%;
     margin-bottom: 10px;
     padding: 12px;
@@ -267,7 +458,7 @@ p {
     border-radius: 4px;
 }
 
-#form-newslatter input[type="submit"] {
+#form-newslatter input[type='submit'] {
     background-color: var(--y-in-mn-blue);
     color: var(--white);
     padding: 10px 20px;
@@ -301,7 +492,6 @@ footer {
     color: var(--special-black);
 }
 
-
 /* MEDIA QUERY */
 
 @media (max-width: 650px) {
@@ -319,6 +509,7 @@ footer {
     }
     #nav-bar {
         padding: 0;
+        top: 0;
         height: auto;
         position: absolute;
         display: none;
