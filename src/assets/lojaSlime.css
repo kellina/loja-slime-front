@@ -33,7 +33,6 @@ p {
 
 #header {
     position: relative;
-    overflow: hidden;
     top: 0;
     width: 100%;
     min-height: auto;
@@ -131,7 +130,7 @@ nav {
     transform: rotate(-45deg) translate(0, -1px);
 }
 
-/* #menu
+#menu
  {
    position: absolute;
    width: 300px;
@@ -141,13 +140,14 @@ nav {
    background: #ededed;
    list-style-type: none;
    transform-origin: 0% 0%;
-   transform: translate(-100%, 0);
+   transform: translate(-150%, 0);
    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
- } */
+ }
 
 #menu li {
     padding: 10px 0;
     font-size: 22px;
+    list-style-type: none;
 }
 
 #menuToggle input:checked ~ ul {
