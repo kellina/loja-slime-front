@@ -1,18 +1,20 @@
 <p align="left">
-    <img src="./imagem-produtos/logo.png" width="300">
+    <img src="./public/imagem-produtos/logo.png" width="300">
 </p>
 
 # Welcome to the slime shop
 
 > An online store frontend mock application
 
-[![Author](https://img.shields.io/badge/author-kellina-green?style=flat-square)](https://github.com/kellina) [![Netlify Status](https://api.netlify.com/api/v1/badges/8e029475-1ad1-4356-a999-7f67eeafad5b/deploy-status)](https://app.netlify.com/sites/lojaslime/deploys)  ![Netlify](https://img.shields.io/netlify/8e029475-1ad1-4356-a999-7f67eeafad5b) ![License](https://img.shields.io/github/license/kellina/loja-slime-front)
+[![Author](https://img.shields.io/badge/author-kellina-pink)](https://github.com/kellina) ![Netlify](https://img.shields.io/netlify/8e029475-1ad1-4356-a999-7f67eeafad5b?color=pink) ![GitHub](https://img.shields.io/github/license/kellina/loja-slime-front?color=pink)
 
 ## :pushpin: Summary
 
-* [Features](#rocket-features)
-* [Demo](#link-demo)
-* [License](#closed_book-license)
+- [Welcome to the slime shop](#welcome-to-the-slime-shop)
+  - [:pushpin: Summary](#pushpin-summary)
+  - [:rocket: Features](#rocket-features)
+  - [:link: Demo](#link-demo)
+  - [:closed_book: License](#closed_book-license)
 
 ## :rocket: Features
 
