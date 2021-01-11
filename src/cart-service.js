@@ -1,5 +1,5 @@
 const axios = require("axios").default;
-require('dotenv').config()
+//require('dotenv').config()
 
 export async function addToCart(userId, productId, qty) {
   const url = `${process.env.BACKEND_URL}cart`;
