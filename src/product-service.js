@@ -1,4 +1,6 @@
 // eslint-disable-next-line import/prefer-default-export
+require('dotenv').config()
+
 export async function getProdutos(nome) {
   let url = `${process.env.BACKEND_URL}products`;
 
