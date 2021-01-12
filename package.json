@@ -4,7 +4,8 @@
   "description": "An online store frontend mock application",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "build-netlify": "node create-env.js && webpack"
   },
   "repository": {
     "type": "git",

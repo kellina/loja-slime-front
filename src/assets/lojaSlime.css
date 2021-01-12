@@ -62,7 +62,7 @@ nav {
     height: 50px;
     font-weight: 700;
     background-color: var(--rose-dust);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 #menuToggle input,
@@ -190,7 +190,6 @@ span {
 
     #menuToggle ul li {
         padding: 10px 0;
-        font-size: 22px;
         border-bottom: none;
         display: flex;
     }
@@ -203,28 +202,12 @@ span {
 /* 
 
 
-#nav-bar li a.active {
-    background-color: var(--y-in-mn-blue);
-    color: var(--white);
-} */
-
-#cart-icon {
-    font-size: 30px;
-    cursor: pointer;
-}
-
-#header .hamburguer-menu {
-    display: none;
-    font-size: 22pt;
-    cursor: pointer;
-    z-index: 2;
-}
-
 /* PESQUISAR NA PÁGINA  */
 
 .search {
     float: right;
     min-width: 285px;
+    align-self: center;
 }
 
 .search input[type='text'] {
@@ -248,6 +231,12 @@ span {
 
 .search button:hover {
     background-color: #ccc;
+}
+
+#cart-icon {
+    font-size: 1.6em;
+    cursor: pointer;
+    align-self: center;
 }
 
 /* TITULO DA LOJA */
@@ -402,6 +391,7 @@ td img {
     width: 100%;
 }
 
+
 /* MEUS PRODUTOS */
 
 #products {
@@ -439,23 +429,40 @@ td img {
     padding-bottom: 30px;
 }
 
-.item-span button {
-    cursor: pointer;
+/* ADD TO CART */
+
+.qty{
+    background-color: #ddd;
+    width: 25%;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 1px solid #c2c2c2;
+    box-shadow: 1px 1px 2px #ebebeb;
+    border-radius: 4px;
+}
+.add-cart-button {
+    background-color: var(--rose-dust);
+    padding: 10px;
     width: 70%;
-    height: 30px;
-    font-weight: bold;
-}
-
-.item-span button:hover {
-    border: solid 2px var(--y-in-mn-blue);
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin: -1px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--white);
-    background-color: var(--chinese-violet);
+    cursor: pointer;
+}
+.add-cart-button:hover {
+        background-color: #b56576bb;
+        transition: all .4s ease-in-out;
 }
 
-.item-span button i {
-    font-size: 20px;
-    vertical-align: middle;
+.add-cart-button i {
+    font-size: 1.2em;
 }
+
 
 /* FORMULARIO NEWSLATTER */
 
@@ -537,7 +544,7 @@ footer {
         display: flex;
     }
     #header .search {
-        min-width: unset;
+        min-block-size: fit-content;
     }
     #nav-bar {
         padding: 0;

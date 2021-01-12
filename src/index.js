@@ -22,7 +22,7 @@ function listProdutos() {
         <h3>${product.name}</h3>
         <p class="price">R$ ${product.price}</p>
         <label for="quantity" > Quantidade: </label> 
-        <input type="number" id="quantity_${product.id}"  name="products[quantity]" min="0" value="1" >
+        <input class="qty" type="number" id="quantity_${product.id}"  name="products[quantity]" min="0" value="1" >
         <button class="add-cart-button" data-product-id="${product.id}">Adicionar ao carrinho
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
         </button>
