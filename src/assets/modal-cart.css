@@ -1,4 +1,5 @@
 /* CARRINHO DE COMPRAS */
+
 .modal {
     display: none;
     position: fixed;
@@ -11,6 +12,7 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -52,8 +54,7 @@
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -67,7 +68,7 @@
 
 .modal-body {
     padding: 2px 16px;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .modal-footer {
@@ -88,25 +89,64 @@
 }
 
 table {
-    width: auto;
+    width: 100%;
     font-family: inherit;
     max-height: min-content;
 }
 
-table,
-th,
-td {
-    border: 1px solid #ddd;
+table, th, td {
+    border-bottom: 1px solid #ddd;
     border-collapse: collapse;
     text-align: center;
 }
 
-th,
-td {
+th, td {
     padding: 15px;
 }
 
 td img {
-    width: 100%;
+    width: 30%;
+    border-radius: 8px;
 }
 
+.delete-item {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 760px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        border-bottom: 1px solid #eee;
+    }
+    tr {
+        border-bottom: 1px solid #ccc;
+    }
+    td {
+        border: none;
+        position: relative;
+        /* padding-left: 50%; */
+    }
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td img {
+        width: 50%;
+    }
+
+    tfoot tr {
+        display: inline-flex;
+        padding-left: 50%;
+        border-bottom: none;
+    }
+}

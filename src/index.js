@@ -51,6 +51,10 @@ function listProdutos() {
       const productId = event.target.getAttribute("data-product-id");
       const qty = document.querySelector(`#quantity_${productId}`).value;
       addToCart(userId, productId, qty);
+      
+      const cartBadge = document.querySelector("#cart-icon i")
+      const cartQty = cartBadge.getAttribute('data-count') * 1 + qty*1
+      cartBadge.setAttribute("data-count", cartQty)
     }));
   });
 }
