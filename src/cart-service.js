@@ -9,8 +9,6 @@ export async function addToCart(userId, productId, qty) {
     product_id: productId,
     qty,
   });
-
-  console.log(response);
 }
 
 export async function listItems(userId) {
@@ -18,4 +16,10 @@ export async function listItems(userId) {
 
   const response = await axios.get(url);
   return response.data;
+}
+
+export async function deleteFromCart(cartId, productId) {
+  const url = `${process.env.BACKEND_URL}cart/${cartId}/item/${productId}`;
+
+  const response = await axios.delete(url)
 }

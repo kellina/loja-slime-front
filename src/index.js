@@ -1,6 +1,7 @@
 import { getProdutos } from "./product-service";
 import "./assets/lojaSlime.css";
-import { addToCart, listItems } from "./cart-service";
+import "./assets/modal-cart.css"
+import { addToCart, deleteFromCart, listItems } from "./cart-service";
 import getUserId from "./user-service";
 
 function showMenu() {
@@ -10,6 +11,10 @@ function showMenu() {
   } else {
     x.style.display = "flex";
   }
+}
+
+function searchKeypressed(event) {
+  if (event.charCode === 13) listProdutos();
 }
 
 function listProdutos() {
@@ -40,6 +45,8 @@ function listProdutos() {
     // Event bind for each button for add item to cart
     const buttonList = document.querySelectorAll("button.add-cart-button");
     buttonList.forEach((button) => button.addEventListener("click", (event) => {
+      alert("Produto adicionado!");
+      
       const userId = getUserId();
       const productId = event.target.getAttribute("data-product-id");
       const qty = document.querySelector(`#quantity_${productId}`).value;
@@ -47,7 +54,6 @@ function listProdutos() {
     }));
   });
 }
-listProdutos();
 
 function getCartItemsHtml(products) {
   let html = `
@@ -71,6 +77,7 @@ function getCartItemsHtml(products) {
     <td>${product.description}</td>
     <td>${product.quantity}</td>
     <td>${product.price}</td>
+    <td><i cartid="${product.cartid}" productid="${product.productid}" id="delete${product.productid}" class="fa fa-trash-o delete-item"></i></td>
 </tr>
     `;
   }).join("\n");
@@ -92,6 +99,11 @@ function showCart() {
     const cart = document.getElementById("cart");
     cart.style.display = "block";
     document.querySelector("#cart .modal-body").innerHTML = getCartItemsHtml(products);
+  
+    const trashList = document.getElementsByClassName("delete-item")
+      for (let trash of trashList){
+      trash.onclick = deleteCartItem
+    }
   });
 }
 
@@ -107,10 +119,15 @@ function conditionalCloseCart(event) {
   }
 }
 
-function searchKeypressed(event) {
-  if (event.charCode === 13) listProdutos();
+const deleteCartItem = (e) => {
+  const cartId = e.target.getAttribute('cartid')
+  const productId = e.target.getAttribute('productid')
+  deleteFromCart(cartId, productId).then(() => {
+    showCart()
+  })
 }
 
+// BIND -> DOM element to function handle (click, keypress....)
 const hamburguerMenu = document.querySelector("#hamburguer-icon");
 if (hamburguerMenu) {
   hamburguerMenu.addEventListener("click", showMenu);
@@ -122,3 +139,6 @@ document.getElementById("cart-icon").onclick = showCart;
 const closeButton = document.getElementsByClassName("close")[0];
 closeButton.onclick = closeCart;
 window.onclick = conditionalCloseCart;
+
+
+listProdutos();
